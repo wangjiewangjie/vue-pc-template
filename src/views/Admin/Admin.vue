@@ -14,9 +14,9 @@
               >首页</el-breadcrumb-item
             >
             <!-- 首页不显示二级面包屑 -->
-            <el-breadcrumb-item v-if="$route.name !== 'Home'">{{
-              $route.meta.title
-            }}</el-breadcrumb-item>
+            <el-breadcrumb-item v-if="$route.name !== 'Home'">
+              {{ $route.meta.title }}
+            </el-breadcrumb-item>
           </el-breadcrumb>
           <!-- / 面包屑 -->
           <el-button icon="el-icon-switch-button" circle></el-button>
@@ -50,8 +50,8 @@ export default {
   components: {
     Siderbar
   },
-  methods: mapMutations(["handleCollapse"]),
-  computed: mapState(["iconCollapse"])
+  methods: { ...mapMutations(["handleCollapse"]) },
+  computed: { ...mapState(["iconCollapse"]) }
 };
 </script>
 
@@ -96,6 +96,6 @@ export default {
 }
 .fade-leave-active {
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 0.5s;
 }
 </style>

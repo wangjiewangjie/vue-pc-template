@@ -43,7 +43,7 @@ export default {
       activeTextColor: ""
     };
   },
-  computed: mapState(["isCollapse"])
+  computed: { ...mapState(["isCollapse"]) }
   // computed: {
   //   isCollapse() {
   //     return this.$store.state.isCollapse;
