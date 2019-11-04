@@ -9,16 +9,16 @@
       <el-container style="width:auto;right:0;">
         <el-header>
           <i class="icon" :class="iconCollapse" @click="handleCollapse"></i>
+
           <el-breadcrumb separator="/">
-            <el-breadcrumb-item :to="{ path: '/admin' }"
-              >首页</el-breadcrumb-item
+            <el-breadcrumb-item
+              v-for="item in breadcrumbArr"
+              :key="item.path"
+              :to="item.path"
+              >{{ item.meta.title }}</el-breadcrumb-item
             >
-            <!-- 首页不显示二级面包屑 -->
-            <el-breadcrumb-item v-if="$route.name !== 'Home'">
-              {{ $route.meta.title }}
-            </el-breadcrumb-item>
           </el-breadcrumb>
-          <!-- / 面包屑 -->
+          <!-- / 动态面包屑 -->
           <el-button icon="el-icon-switch-button" circle></el-button>
           <!-- / 退出 -->
         </el-header>
@@ -50,37 +50,61 @@ export default {
   components: {
     Siderbar
   },
-  methods: { ...mapMutations(["handleCollapse"]) },
-  computed: { ...mapState(["iconCollapse"]) }
+  data() {
+    return {
+      breadcrumbArr: []
+    };
+  },
+  computed: { ...mapState(["iconCollapse"]) },
+  watch: {
+    $route() {
+      this.getBreadcrumb();
+    }
+  },
+  created() {
+    this.getBreadcrumb();
+  },
+  methods: {
+    ...mapMutations(["handleCollapse"]),
+    getBreadcrumb() {
+      let matched = this.$route.matched.filter(item => item.name);
+      const first = matched[0];
+
+      if (
+        first &&
+        first.name.trim().toLocaleLowerCase() !== "home".toLocaleLowerCase()
+      ) {
+        matched = [{ path: "/admin", meta: { title: "首页" } }].concat(matched);
+      }
+      this.breadcrumbArr = matched;
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-.page {
+.el-container {
   height: 100%;
-  .el-container {
-    height: 100%;
+}
+.el-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: $right;
+  background: rgba($color: $white, $alpha: 1);
+  color: $mainTextColor;
+  line-height: 60px;
+  box-shadow: 2px 2px 5px rgba($color: $black, $alpha: 0.15);
+  .icon {
+    font-size: $large;
+    cursor: pointer;
   }
-  .el-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    text-align: $right;
-    background: rgba($color: $white, $alpha: 1);
+  .el-breadcrumb {
+    flex: 1;
+    padding: 0 20px;
+  }
+  .el-icon-setting {
     color: $mainTextColor;
-    line-height: 60px;
-    box-shadow: 2px 2px 5px rgba($color: $black, $alpha: 0.15);
-    .el-breadcrumb {
-      flex: 1;
-      padding: 0 20px;
-    }
-    .icon {
-      font-size: $large;
-    }
-    .el-icon-setting {
-      color: $mainTextColor;
-    }
   }
 }
 
