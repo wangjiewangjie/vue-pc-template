@@ -108,6 +108,21 @@ const routes = [
     component: () => import("../views/Admin/Admin.vue"),
     children: [
       {
+        path: "/editor/index",
+        name: "Editor",
+        component: () => import("../views/Editor/Editor.vue"),
+        meta: {
+          title: "富文本编辑器",
+          keepAlive: false
+        }
+      }
+    ]
+  },
+  {
+    path: "/admin",
+    component: () => import("../views/Admin/Admin.vue"),
+    children: [
+      {
         path: "/setting/index",
         name: "Setting",
         component: () => import("../views/Setting/Setting.vue"),

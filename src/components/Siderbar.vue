@@ -25,6 +25,10 @@
       <i class="el-icon-document"></i>
       <span slot="title">Excel</span>
     </el-menu-item>
+    <el-menu-item index="/editor/index">
+      <i class="el-icon-s-tools"></i>
+      <span slot="title">富文本</span>
+    </el-menu-item>
     <el-menu-item index="/setting/index">
       <i class="el-icon-s-tools"></i>
       <span slot="title">设置</span>

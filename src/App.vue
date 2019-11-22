@@ -9,3 +9,7 @@ export default {
   name: "App"
 };
 </script>
+
+<style lang="scss" scoped>
+@import "assets/css/setting.css";
+</style>
