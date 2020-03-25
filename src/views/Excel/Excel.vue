@@ -4,49 +4,50 @@
       <el-button @click="handleExportExcel">导出EXCEL</el-button>
       <el-button @click="handleImportExcel">导入EXCEL</el-button>
     </div>
-    <el-table
-      :data="tableData"
-      stripe
-      :default-sort="{ prop: 'totalPrice', order: 'ascending' }"
-    >
+    <el-table :data="tableData" stripe :default-sort="{ prop: 'totalPrice', order: 'ascending' }">
       <el-table-column label="机箱">
         <template slot-scope="prop">
           {{ prop.row.mainframeBox }}
-          <span class="item-table-column" v-if="prop.row.mainframeBoxPrice"
-            >/￥{{ prop.row.mainframeBoxPrice }}</span
-          >
+          <span
+            class="item-table-column"
+            v-if="prop.row.mainframeBoxPrice"
+          >/￥{{ prop.row.mainframeBoxPrice }}</span>
         </template>
       </el-table-column>
       <el-table-column label="CPU">
         <template slot-scope="prop">
           {{ prop.row.CPU }}
-          <span class="item-table-column" v-if="prop.row.CPUPrice"
-            >/￥{{ prop.row.CPUPrice }}</span
-          >
+          <span
+            class="item-table-column"
+            v-if="prop.row.CPUPrice"
+          >/￥{{ prop.row.CPUPrice }}</span>
         </template>
       </el-table-column>
       <el-table-column prop="motherBoard" label="主板">
         <template slot-scope="prop">
           {{ prop.row.motherBoard }}
-          <span class="item-table-column" v-if="prop.row.motherBoardPrice"
-            >/￥{{ prop.row.motherBoardPrice }}</span
-          >
+          <span
+            class="item-table-column"
+            v-if="prop.row.motherBoardPrice"
+          >/￥{{ prop.row.motherBoardPrice }}</span>
         </template>
       </el-table-column>
       <el-table-column prop="memory" label="内存">
         <template slot-scope="prop">
           {{ prop.row.memory }}
-          <span class="item-table-column" v-if="prop.row.memoryPrice"
-            >/￥{{ prop.row.memoryPrice }}</span
-          >
+          <span
+            class="item-table-column"
+            v-if="prop.row.memoryPrice"
+          >/￥{{ prop.row.memoryPrice }}</span>
         </template>
       </el-table-column>
       <el-table-column prop="SSD" label="固态硬盘">
         <template slot-scope="prop">
           {{ prop.row.SSD }}
-          <span class="item-table-column" v-if="prop.row.SSDPrice"
-            >/￥{{ prop.row.SSDPrice }}</span
-          >
+          <span
+            class="item-table-column"
+            v-if="prop.row.SSDPrice"
+          >/￥{{ prop.row.SSDPrice }}</span>
         </template>
       </el-table-column>
       <el-table-column prop="totalPrice" label="总价" width="100" sortable>

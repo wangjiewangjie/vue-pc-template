@@ -15,8 +15,7 @@
               v-for="item in breadcrumbArr"
               :key="item.path"
               :to="item.path"
-              >{{ item.meta.title }}</el-breadcrumb-item
-            >
+            >{{ item.meta.title }}</el-breadcrumb-item>
           </el-breadcrumb>
           <!-- / 动态面包屑 -->
           <el-button icon="el-icon-switch-button" circle></el-button>
