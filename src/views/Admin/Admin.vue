@@ -18,7 +18,7 @@
             >{{ item.meta.title }}</el-breadcrumb-item>
           </el-breadcrumb>
           <!-- / 动态面包屑 -->
-          <el-button icon="el-icon-switch-button" circle></el-button>
+          <el-button icon="el-icon-switch-button" circle @click="handleLogout"></el-button>
           <!-- / 退出 -->
         </el-header>
         <!-- / 顶栏容器 -->
@@ -76,6 +76,9 @@ export default {
         matched = [{ path: "/admin", meta: { title: "首页" } }].concat(matched);
       }
       this.breadcrumbArr = matched;
+    },
+    handleLogout() {
+      this.$router.replace("/");
     }
   }
 };
