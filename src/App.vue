@@ -12,4 +12,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "assets/css/setting.css";
+#app {
+  width: 100%;
+}
 </style>

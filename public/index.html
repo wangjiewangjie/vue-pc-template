@@ -6,6 +6,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .error {
+      text-align: center;
+      font-size: 100px;
+      font-weight: bolder;
+      text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+        0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+        0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+        0 20px 20px rgba(0, 0, 0, 0.15);
+      color: #fff;
+    }
+
+    p {
+      margin: 20px 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: #909399;
+    }
+  </style>
   <title>vue-cli4.0</title>
   <!-- 使用CDN的CSS文件 -->
   <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.css) { %>
@@ -23,7 +52,9 @@
     <strong>We're sorry but vue-cli4.0 doesn't work properly without JavaScript enabled. Please enable it to
       continue.</strong>
   </noscript>
-  <div id="app"></div>
+  <div id="app">
+    <div class="error">loading...</div>
+  </div>
   <!-- built files will be auto injected -->
   <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
   <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
