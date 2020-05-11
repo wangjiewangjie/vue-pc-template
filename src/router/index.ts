@@ -28,7 +28,7 @@ const routes = [
   {
     path: "*",
     name: "Error",
-    component: () => import("../views/Error/Error.vue"),
+    component: () => import(/* webpackChunkName: "error", webpackPrefetch: true */  "../views/Error/Error.vue"),
     meta: {
       title: "页面不存在",
       keepAlive: false
@@ -37,7 +37,7 @@ const routes = [
   {
     path: "/",
     name: "Login",
-    component: () => import("../views/Login/Login.vue"),
+    component: () => import(/* webpackChunkName: "login" */ "../views/Login/Login.vue"),
     meta: {
       title: "登录",
       keepAlive: false
@@ -50,7 +50,7 @@ const routes = [
       {
         path: "",
         name: "Home",
-        component: () => import("../views/Home/Home.vue"),
+        component: () => import(/* webpackChunkName: "home" */ "../views/Home/Home.vue"),
         meta: {
           title: "首页",
           keepAlive: false
@@ -65,7 +65,7 @@ const routes = [
       {
         path: "/charts/index",
         name: "Charts",
-        component: () => import("../views/Charts/Charts.vue"),
+        component: () => import(/* webpackChunkName: "charts" */ "../views/Charts/Charts.vue"),
         meta: {
           title: "图表",
           keepAlive: false
@@ -80,7 +80,7 @@ const routes = [
       {
         path: "/list/index",
         name: "List",
-        component: () => import("../views/List/List.vue"),
+        component: () => import(/* webpackChunkName: "list" */ "../views/List/List.vue"),
         meta: {
           title: "列表",
           keepAlive: false
@@ -95,7 +95,7 @@ const routes = [
       {
         path: "/excel/index",
         name: "Excel",
-        component: () => import("../views/Excel/Excel.vue"),
+        component: () => import(/* webpackChunkName: "excel" */ "../views/Excel/Excel.vue"),
         meta: {
           title: "Excel",
           keepAlive: false
@@ -110,7 +110,7 @@ const routes = [
       {
         path: "/editor/index",
         name: "Editor",
-        component: () => import("../views/Editor/Editor.vue"),
+        component: () => import(/* webpackChunkName: "editor" */ "../views/Editor/Editor.vue"),
         meta: {
           title: "富文本编辑器",
           keepAlive: false
@@ -125,7 +125,7 @@ const routes = [
       {
         path: "/setting/index",
         name: "Setting",
-        component: () => import("../views/Setting/Setting.vue"),
+        component: () => import(/* webpackChunkName: "setting" */ "../views/Setting/Setting.vue"),
         meta: {
           title: "设置",
           keepAlive: false

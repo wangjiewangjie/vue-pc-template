@@ -28,6 +28,22 @@ module.exports = {
     }
   },
   chainWebpack: config => {
+    /* 
+      移除 prefetch 插件 
+      prefetch链接会消耗宽带，如果是在移动端，而且存在大量的chunk，那么可以关掉 prefetch 链接
+      手动选择要提前获取的代码区块
+
+      {
+        path: "*",
+        name: "Error",
+        component: () => import(webpackPrefetch: true,"../views/Error/Error.vue"),
+        meta: {
+          title: "页面不存在",
+          keepAlive: false
+        }
+      }
+    */
+    config.plugins.delete('prefetch')
     if (process.env.NODE_ENV === "production") {
       /* 生产环境注入cdn */
       config.plugin("html").tap(args => {
