@@ -15,7 +15,7 @@
     "element-ui": "^2.4.5",
     "file-saver": "^2.0.2",
     "qs": "^6.9.1",
-    "tinymce": "^5.1.2",
+    "tinymce": "^5.2.2",
     "v-charts": "^1.19.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
