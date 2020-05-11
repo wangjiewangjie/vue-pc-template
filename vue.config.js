@@ -5,7 +5,8 @@ const cdn = {
   // js: ["https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"]
 };
 module.exports = {
-  publicPath: process.env.NODE_ENV === "development" ? "/" : "./",
+  /* production 路由hash模式配置./相对路径 history模式配置/绝对路径 */
+  publicPath: process.env.NODE_ENV === "development" ? "/" : "/",
   /* 生产环境的 source map，可以将其设置为 false 以加速生产环境构建 */
   productionSourceMap: false,
   configureWebpack: config => {

@@ -136,6 +136,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
+  mode: 'history', //配置history需要nginx配置
   routes
 });
 
