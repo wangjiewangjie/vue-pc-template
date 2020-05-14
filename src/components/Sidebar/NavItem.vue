@@ -14,7 +14,7 @@
     ></nav-item>
   </el-submenu>
   <el-menu-item v-else :index="item.path">
-    <i class="iconfont" :class="[item.iconfontname]"></i>
+    <i class="iconfont" :class="item.path!==navActive?[item.iconfontname]:`${[item.iconfontname]}-active`"></i>
     <span>{{ item.name }}</span>
   </el-menu-item>
 </template>
@@ -23,7 +23,7 @@
 export default {
   // 递归组件必须有name
   name: "NavItem",
-  props: ["item", "navIndex"]
+  props: ["item", "navIndex", "navActive"]
 };
 </script>
 

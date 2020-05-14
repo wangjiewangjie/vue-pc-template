@@ -8,12 +8,14 @@
     :text-color="textColor"
     :active-text-color="activeTextColor"
     :collapse="isCollapse"
+    @select="handleSelect"
   >
     <navitem
       v-for="(item, index) in sideBarData"
       :item="item"
       :navIndex="String(index)"
       :key="index"
+      :navActive="navActive"
     ></navitem>
     <!-- <el-menu-item index="/admin">
       <i class="el-icon-s-home"></i>
@@ -55,6 +57,7 @@ export default {
       backgroundColor: "",
       textColor: "",
       activeTextColor: "",
+      navActive: "",
       sideBarData: [
         {
           path: "/admin",
@@ -119,7 +122,12 @@ export default {
       ]
     };
   },
-  computed: { ...mapState(["isCollapse"]) }
+  computed: { ...mapState(["isCollapse"]) },
+  methods: {
+    handleSelect(key, keyPath) {
+      this.navActive = key;
+    }
+  }
   // computed: {
   //   isCollapse() {
   //     return this.$store.state.isCollapse;
