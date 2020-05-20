@@ -1,4 +1,4 @@
-# vue-cli4.0
+# vue-pc-template
 
 ## Project setup
 ```
