@@ -15,32 +15,7 @@
       :item="item"
       :navIndex="String(index)"
       :key="index"
-      :navActive="navActive"
     ></navitem>
-    <!-- <el-menu-item index="/admin">
-      <i class="el-icon-s-home"></i>
-      <span slot="title">首页</span>
-    </el-menu-item>
-    <el-menu-item index="/charts/index">
-      <i class="el-icon-s-data"></i>
-      <span slot="title">图表</span>
-    </el-menu-item>
-    <el-menu-item index="/list/index">
-      <i class="el-icon-s-order"></i>
-      <span slot="title">列表</span>
-    </el-menu-item>
-    <el-menu-item index="/excel/index">
-      <i class="el-icon-document"></i>
-      <span slot="title">Excel</span>
-    </el-menu-item>
-    <el-menu-item index="/editor/index">
-      <i class="el-icon-s-tools"></i>
-      <span slot="title">富文本</span>
-    </el-menu-item>
-    <el-menu-item index="/setting/index">
-      <i class="el-icon-s-tools"></i>
-      <span slot="title">设置</span>
-    </el-menu-item>-->
   </el-menu>
 </template>
 
@@ -57,7 +32,6 @@ export default {
       backgroundColor: "",
       textColor: "",
       activeTextColor: "",
-      navActive: "",
       sideBarData: [
         {
           path: "/admin",
@@ -95,37 +69,13 @@ export default {
           name: "设置",
           child: []
         }
-        //二级菜单
-        // {
-        //   path: "/Level-2-menu",
-        //   iconfontname: "Level-2-menu",
-        //   name: "Level-2-menu",
-        //   child: [
-        //     { path: "/Level-2-menu-1", name: "Level-2-menu-1", child: [] },
-        //   ]
-        // },
-        //三级菜单
-        // {
-        //   path: "/Level-3-menu",
-        //   iconfontname: "Level-3-menu",
-        //   name: "Level-3-menu",
-        //   child: [
-        //     {
-        //       path: "/Level-3-menu-1",
-        //       name: "Level-3-menu-1",
-        //       child: [
-        //         { path: "/Level-3-menu-1-1", name: "Level-3-menu-1-1", child: [] },
-        //       ]
-        //     }
-        //   ]
-        // }
       ]
     };
   },
   computed: { ...mapState(["isCollapse"]) },
   methods: {
     handleSelect(key, keyPath) {
-      this.navActive = key;
+      this.$store.state.navActive = key;
     }
   }
   // computed: {

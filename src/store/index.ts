@@ -5,6 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    navActive: "",
     isCollapse: false,
     iconCollapse: 'el-icon-s-fold'
   },
@@ -12,7 +13,6 @@ export default new Vuex.Store({
     // 水平折叠收起菜单
     handleCollapse(state) {
       state.isCollapse = !state.isCollapse
-
       if (state.isCollapse === true) {
         state.iconCollapse = 'el-icon-s-unfold'
       } else {

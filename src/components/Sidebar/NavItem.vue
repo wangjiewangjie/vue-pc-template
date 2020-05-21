@@ -2,7 +2,10 @@
   <el-submenu v-if="item.child && item.child.length" :index="navIndex">
     <!-- 创建菜单分组 -->
     <template slot="title">
-      <i class="iconfont" :class="[item.iconfontname]"></i>
+      <i
+        class="iconfont"
+        :class="item.path!==navActive?item.iconfontname:`${item.iconfontname}-active`"
+      ></i>
       <span>{{ item.name }}</span>
     </template>
     <!-- 递归调用自身，直到subItem不含有子节点 -->
@@ -14,16 +17,21 @@
     ></nav-item>
   </el-submenu>
   <el-menu-item v-else :index="item.path">
-    <i class="iconfont" :class="item.path!==navActive?[item.iconfontname]:`${[item.iconfontname]}-active`"></i>
+    <i
+      class="iconfont"
+      :class="item.path!==navActive?item.iconfontname:`${item.iconfontname}-active`"
+    ></i>
     <span>{{ item.name }}</span>
   </el-menu-item>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   // 递归组件必须有name
   name: "NavItem",
-  props: ["item", "navIndex", "navActive"]
+  props: ["item", "navIndex", "navActive"],
+  computed: { ...mapState(["navActive"]) }
 };
 </script>
 
