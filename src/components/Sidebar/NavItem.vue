@@ -30,7 +30,7 @@ import { mapState } from "vuex";
 export default {
   // 递归组件必须有name
   name: "NavItem",
-  props: ["item", "navIndex", "navActive"],
+  props: ["item", "navIndex"],
   computed: { ...mapState(["navActive"]) }
 };
 </script>
