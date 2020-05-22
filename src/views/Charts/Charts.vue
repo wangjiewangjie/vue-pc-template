@@ -23,12 +23,14 @@ export default {
     };
   },
   created() {
-    chartsApi({}).then(res => {
-      // sort按日期排序
-      this.chartData.rows = res.data.sort((a, b) => {
-        return b.date < a.date ? 1 : -1;
-      });
-    });
+    chartsApi({})
+      .then(res => {
+        // sort按日期排序
+        this.chartData.rows = res.data.data.sort((a, b) => {
+          return b.date < a.date ? 1 : -1;
+        });
+      })
+      .catch(error => {});
   }
 };
 </script>
