@@ -1,6 +1,6 @@
 /* 时间戳转换 */
-function timeFormat(timeStamp, formats) {
-  formats = formats || 'yyyy-MM-dd';
+const timeFormat = (timeStamp, formats) => {
+  formats = formats || "yyyy-MM-dd";
   let date = timeStamp ? new Date(timeStamp) : new Date();
   let year = date.getFullYear();
   let month = formatDigit(date.getMonth() + 1);
@@ -9,57 +9,65 @@ function timeFormat(timeStamp, formats) {
   let minute = formatDigit(date.getMinutes());
   let second = formatDigit(date.getSeconds());
   return formats.replace(/yyyy|MM|dd|hh|mm|ss/g, function (matches) {
-    return ({
+    return {
       yyyy: year,
       MM: month,
       dd: day,
       hh: hour,
       mm: minute,
       ss: second
-    })[matches];
+    } [matches];
   });
   // 小于10补0
   function formatDigit(n) {
-    return n.toString().replace(/^(\d)$/, '0$1');
-  };
-}
+    return n.toString().replace(/^(\d)$/, "0$1");
+  }
+};
 
 /* 页面地址参数获取 */
-function getWindonHref() {
+const getWindonHref = () => {
   let hrefStr = window.location.href;
-  let args = hrefStr.split('?');
+  let args = hrefStr.split("?");
   if (args[0] === hrefStr) {
-    return '';
+    return "";
   }
-  let hrefArr = args[1].split('#')[0].split('&');
+  let hrefArr = args[1].split("#")[0].split("&");
   let hrefObj = {};
   for (let i = 0; i < hrefArr.length; i++) {
-    hrefArr[i] = hrefArr[i].split('=');
+    hrefArr[i] = hrefArr[i].split("=");
     hrefObj[hrefArr[i][0]] = hrefArr[i][1];
   }
   return hrefObj;
-}
+};
 
 /* 设置cookie */
-function setCookie(name, value, iDay) {
+const setCookie = (name, value, iDay) => {
   let oDate = new Date();
   oDate.setDate(oDate.getDate() + iDay);
-  document.cookie = name + '=' + value + ';expires=' + oDate;
-}
+  document.cookie = name + "=" + value + ";expires=" + oDate;
+};
 
 /* 读取cookies */
-function getCookie(name) {
-  let arr = document.cookie.split('; ');
+const getCookie = name => {
+  let arr = document.cookie.split("; ");
   for (let i = 0; i < arr.length; i++) {
-    let arr2 = arr[i].split('=');
+    let arr2 = arr[i].split("=");
     if (arr2[0] == name) {
       return arr2[1];
     }
   }
-  return '';
-}
+  return "";
+};
 
 /* 删除cookies */
-function removeCookie(name) {
+const removeCookie = name => {
   setCookie(name, 1, -1);
-}
+};
+
+export {
+  timeFormat,
+  getWindonHref,
+  setCookie,
+  getCookie,
+  removeCookie
+};
