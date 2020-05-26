@@ -9,13 +9,6 @@ import "../mock";
 
 Vue.config.productionTip = false;
 
-/* 路由发生变化修改页面title */
-router.afterEach((to, from) => {
-  if (to.meta.title) {
-    document.title = to.meta.title;
-  }
-});
-
 new Vue({
   router,
   store,

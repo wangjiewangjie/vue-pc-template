@@ -135,9 +135,18 @@ const routes = [
   }
 ];
 
+
+
 const router = new VueRouter({
   mode: 'history', //配置history需要nginx配置
-  routes
+  routes,
+});
+
+/* 路由发生变化修改页面title */
+router.afterEach((to, from) => {
+  if (to.meta.title) {
+    document.title = to.meta.title;
+  }
 });
 
 export default router;
