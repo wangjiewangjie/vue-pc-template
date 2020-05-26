@@ -21,6 +21,51 @@ const chartsApi = () => {
   };
 };
 
+const navListApi = () => {
+  let data = [{
+      path: "/admin",
+      iconfontname: "el-icon-s-home",
+      name: "首页",
+      child: []
+    },
+    {
+      path: "/charts/index",
+      iconfontname: "el-icon-s-data",
+      name: "图表",
+      child: []
+    },
+    {
+      path: "/list/index",
+      iconfontname: "el-icon-s-order",
+      name: "列表",
+      child: []
+    },
+    {
+      path: "/excel/index",
+      iconfontname: "el-icon-document",
+      name: "Excel",
+      child: []
+    },
+    {
+      path: "/editor/index",
+      iconfontname: "el-icon-s-tools",
+      name: "富文本",
+      child: []
+    },
+    {
+      path: "/setting/index",
+      iconfontname: "el-icon-s-tools",
+      name: "设置",
+      child: []
+    }
+  ];
+
+  return {
+    data: data
+  };
+}
+
 export default {
-  chartsApi
+  chartsApi,
+  navListApi
 };

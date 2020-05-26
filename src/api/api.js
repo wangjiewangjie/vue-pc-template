@@ -10,3 +10,11 @@ export function chartsApi(data) {
     data
   })
 }
+
+export function navListApi(data) {
+  return request({
+    url: `${api}navListApi`,
+    method: 'get',
+    data
+  })
+}

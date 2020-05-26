@@ -22,6 +22,7 @@
 <script>
 import navitem from "./NavItem";
 import { mapState } from "vuex";
+import { navListApi } from "@/api/api";
 // import store from "@/store/index";
 export default {
   components: {
@@ -32,47 +33,17 @@ export default {
       backgroundColor: "",
       textColor: "",
       activeTextColor: "",
-      sideBarData: [
-        {
-          path: "/admin",
-          iconfontname: "el-icon-s-home",
-          name: "首页",
-          child: []
-        },
-        {
-          path: "/charts/index",
-          iconfontname: "el-icon-s-data",
-          name: "图表",
-          child: []
-        },
-        {
-          path: "/list/index",
-          iconfontname: "el-icon-s-order",
-          name: "列表",
-          child: []
-        },
-        {
-          path: "/excel/index",
-          iconfontname: "el-icon-document",
-          name: "Excel",
-          child: []
-        },
-        {
-          path: "/editor/index",
-          iconfontname: "el-icon-s-tools",
-          name: "富文本",
-          child: []
-        },
-        {
-          path: "/setting/index",
-          iconfontname: "el-icon-s-tools",
-          name: "设置",
-          child: []
-        }
-      ]
+      sideBarData: []
     };
   },
   computed: { ...mapState(["isCollapse"]) },
+  created() {
+    navListApi({})
+      .then(res => {
+        this.sideBarData = res.data.data;
+      })
+      .catch(error => {});
+  },
   methods: {
     handleSelect(key, keyPath) {
       this.$store.state.navActive = key;
