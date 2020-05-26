@@ -127,7 +127,16 @@ const routes = [
         name: "Setting",
         component: () => import(/* webpackChunkName: "setting" */ "../views/Setting/Setting.vue"),
         meta: {
-          title: "设置",
+          title: "设置1",
+          keepAlive: false
+        }
+      },
+      {
+        path: "/setting/secondmenu",
+        name: "SettingMenu",
+        component: () => import(/* webpackChunkName: "setting" */ "../views/Setting/SecondMenu.vue"),
+        meta: {
+          title: "设置2",
           keepAlive: false
         }
       }
