@@ -1,8 +1,8 @@
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const productionGzipExtensions = ["js", "css"];
 const cdn = {
-  css: []
-  // js: ["https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"]
+  css: [],
+  js: ["https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js", "https://cdn.bootcdn.net/ajax/libs/echarts/4.4.0/echarts.min.js"]
 };
 module.exports = {
   /* production 路由hash模式配置./相对路径 history模式配置/绝对路径 */
@@ -51,6 +51,8 @@ module.exports = {
         return args;
       });
     }
+    
+    config.plugin('webpack-bundle-analyzer').use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
   },
   css: {
     loaderOptions: {
