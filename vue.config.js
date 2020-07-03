@@ -2,7 +2,7 @@ const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const productionGzipExtensions = ["js", "css"];
 const cdn = {
   css: ["https://cdn.bootcdn.net/ajax/libs/element-ui/2.4.5/theme-chalk/index.css"],
-  js: ["https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js", "https://cdn.bootcdn.net/ajax/libs/echarts/4.4.0/echarts.min.js","https://cdn.bootcdn.net/ajax/libs/element-ui/2.4.5/index.js"]
+  js: ["https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js", "https://cdn.bootcdn.net/ajax/libs/echarts/4.4.0/echarts.min.js", "https://cdn.bootcdn.net/ajax/libs/element-ui/2.4.5/index.js"]
 };
 module.exports = {
   /* production 路由hash模式配置./相对路径 history模式配置/绝对路径 */
@@ -13,7 +13,9 @@ module.exports = {
     if (process.env.NODE_ENV === "production") {
       /* 修改webpack config, 使其不打包externals下的资源 public/index.html 添加cdn */
       config.externals = {
-        // "vue-router": "VueRouter"
+        "vue-router": "VueRouter",
+        "echarts": "echarts",
+        "element-ui": "ELEMENT"
       };
       /* gzip压缩 服务器端需要配置 */
       config.plugins.push(
