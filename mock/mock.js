@@ -22,7 +22,8 @@ const chartsApi = () => {
 };
 
 const navListApi = () => {
-  let data = [{
+  let data = [
+    {
       path: "/admin",
       iconfontname: "el-icon-s-home",
       name: "首页",
@@ -56,15 +57,16 @@ const navListApi = () => {
       path: "/setting",
       iconfontname: "el-icon-s-tools",
       name: "设置",
-      child: [{
+      child: [
+        {
           path: "/setting/index",
           iconfontname: "el-icon-s-tools",
-          name: "设置1",
+          name: "设置1"
         },
         {
           path: "/setting/secondmenu",
           iconfontname: "el-icon-s-tools",
-          name: "设置2",
+          name: "设置2"
         }
       ]
     }
@@ -73,7 +75,7 @@ const navListApi = () => {
   return {
     data: data
   };
-}
+};
 
 export default {
   chartsApi,
