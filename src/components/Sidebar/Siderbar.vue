@@ -42,10 +42,12 @@ export default {
       .then(res => {
         this.sideBarData = res.data.data;
       })
-      .catch(error => {});
+      .catch(error => {
+        console.log(error);
+      });
   },
   methods: {
-    handleSelect(key, keyPath) {
+    handleSelect(key) {
       this.$store.state.navActive = key;
     }
   }

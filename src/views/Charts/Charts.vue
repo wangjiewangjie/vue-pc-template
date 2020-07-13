@@ -30,7 +30,9 @@ export default {
           return b.date < a.date ? 1 : -1;
         });
       })
-      .catch(error => {});
+      .catch(error => {
+        console.log(error);
+      });
   }
 };
 </script>

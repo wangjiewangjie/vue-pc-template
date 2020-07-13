@@ -13,7 +13,7 @@ export default {
     return {
       tinymceHtml: "",
       init: {
-        language_url: "/tinymce/zh_CN.js", //语言包地址
+        language_url: "/public/tinymce/zh_CN.js", //语言包地址
         language: "zh_CN", //语言包
         skin_url: "/tinymce/skins/ui/oxide", //引入外部皮肤
         width: 600, //设置宽度

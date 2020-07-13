@@ -28,7 +28,10 @@ const routes = [
   {
     path: "*",
     name: "Error",
-    component: () => import(/* webpackChunkName: "error", webpackPrefetch: true */  "../views/Error/Error.vue"),
+    component: () =>
+      import(
+        /* webpackChunkName: "error", webpackPrefetch: true */ "../views/Error/Error.vue"
+      ),
     meta: {
       title: "页面不存在",
       keepAlive: false
@@ -37,7 +40,8 @@ const routes = [
   {
     path: "/",
     name: "Login",
-    component: () => import(/* webpackChunkName: "login" */ "../views/Login/Login.vue"),
+    component: () =>
+      import(/* webpackChunkName: "login" */ "../views/Login/Login.vue"),
     meta: {
       title: "登录",
       keepAlive: false
@@ -50,7 +54,8 @@ const routes = [
       {
         path: "",
         name: "Home",
-        component: () => import(/* webpackChunkName: "home" */ "../views/Home/Home.vue"),
+        component: () =>
+          import(/* webpackChunkName: "home" */ "../views/Home/Home.vue"),
         meta: {
           title: "首页",
           keepAlive: false
@@ -65,7 +70,8 @@ const routes = [
       {
         path: "/charts/index",
         name: "Charts",
-        component: () => import(/* webpackChunkName: "charts" */ "../views/Charts/Charts.vue"),
+        component: () =>
+          import(/* webpackChunkName: "charts" */ "../views/Charts/Charts.vue"),
         meta: {
           title: "图表",
           keepAlive: false
@@ -80,7 +86,8 @@ const routes = [
       {
         path: "/list/index",
         name: "List",
-        component: () => import(/* webpackChunkName: "list" */ "../views/List/List.vue"),
+        component: () =>
+          import(/* webpackChunkName: "list" */ "../views/List/List.vue"),
         meta: {
           title: "列表",
           keepAlive: false
@@ -95,7 +102,8 @@ const routes = [
       {
         path: "/excel/index",
         name: "Excel",
-        component: () => import(/* webpackChunkName: "excel" */ "../views/Excel/Excel.vue"),
+        component: () =>
+          import(/* webpackChunkName: "excel" */ "../views/Excel/Excel.vue"),
         meta: {
           title: "Excel",
           keepAlive: false
@@ -110,7 +118,8 @@ const routes = [
       {
         path: "/editor/index",
         name: "Editor",
-        component: () => import(/* webpackChunkName: "editor" */ "../views/Editor/Editor.vue"),
+        component: () =>
+          import(/* webpackChunkName: "editor" */ "../views/Editor/Editor.vue"),
         meta: {
           title: "富文本编辑器",
           keepAlive: false
@@ -125,7 +134,10 @@ const routes = [
       {
         path: "/setting/index",
         name: "Setting",
-        component: () => import(/* webpackChunkName: "setting" */ "../views/Setting/Setting.vue"),
+        component: () =>
+          import(
+            /* webpackChunkName: "setting" */ "../views/Setting/Setting.vue"
+          ),
         meta: {
           title: "设置1",
           keepAlive: false
@@ -134,7 +146,10 @@ const routes = [
       {
         path: "/setting/secondmenu",
         name: "SettingMenu",
-        component: () => import(/* webpackChunkName: "setting" */ "../views/Setting/SecondMenu.vue"),
+        component: () =>
+          import(
+            /* webpackChunkName: "setting" */ "../views/Setting/SecondMenu.vue"
+          ),
         meta: {
           title: "设置2",
           keepAlive: false
@@ -144,15 +159,13 @@ const routes = [
   }
 ];
 
-
-
 const router = new VueRouter({
-  mode: 'history', //配置history需要nginx配置
-  routes,
+  mode: "history", //配置history需要nginx配置
+  routes
 });
 
 /* 路由发生变化修改页面title */
-router.afterEach((to, from) => {
+router.afterEach(to => {
   if (to.meta.title) {
     document.title = to.meta.title;
   }
