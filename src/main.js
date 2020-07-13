@@ -6,6 +6,7 @@ import "./plugins/element.js";
 import "./plugins/charts.js";
 import "./styles/reset.css";
 import "../mock";
+import "default-passive-events";
 
 Vue.config.productionTip = false;
 
