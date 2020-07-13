@@ -15,10 +15,15 @@
               v-for="item in breadcrumbArr"
               :key="item.path"
               :to="item.path"
-            >{{ item.meta.title }}</el-breadcrumb-item>
+              >{{ item.meta.title }}</el-breadcrumb-item
+            >
           </el-breadcrumb>
           <!-- / 动态面包屑 -->
-          <el-button icon="el-icon-switch-button" circle @click="handleLogout"></el-button>
+          <el-button
+            icon="el-icon-switch-button"
+            circle
+            @click="handleLogout"
+          ></el-button>
           <!-- / 退出 -->
         </el-header>
         <!-- / 顶栏容器 -->
@@ -26,12 +31,18 @@
           <!-- 根据路由配置状态判断是否需要保存组件状态或避免重新渲染 -->
           <transition name="fade" mode="out-in">
             <keep-alive>
-              <router-view v-if="$route.meta.keepAlive" :key="$route.fullPath"></router-view>
+              <router-view
+                v-if="$route.meta.keepAlive"
+                :key="$route.fullPath"
+              ></router-view>
             </keep-alive>
           </transition>
           <!-- / 保留组件状态或避免重新渲染 -->
           <transition name="fade" mode="out-in">
-            <router-view v-if="!$route.meta.keepAlive" :key="$route.fullPath"></router-view>
+            <router-view
+              v-if="!$route.meta.keepAlive"
+              :key="$route.fullPath"
+            ></router-view>
           </transition>
           <!-- /  页面路由-->
         </el-main>
