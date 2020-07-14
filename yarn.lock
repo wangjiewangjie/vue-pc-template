@@ -1070,10 +1070,10 @@
   resolved "https://registry.yarnpkg.com/@soda/get-current-script/-/get-current-script-1.0.2.tgz#a53515db25d8038374381b73af20bb4f2e508d87"
   integrity sha512-T7VNNlYVM1SgQ+VsMYhnDkcGmWhQdL0bDyGm5TlQ3GBXnJscEClUUOKduWTmm2zCnvNLC1hc3JpuXjs/nFOc5w==
 
-"@tinymce/tinymce-vue@^3.2.2":
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/@tinymce/tinymce-vue/-/tinymce-vue-3.2.2.tgz#a16500fbeebfec4ae43f4e9fe5bd739aeb66a3d6"
-  integrity sha512-LNgKbdaScHHkBsq6UZsMpEL5yPY8oYTGaOX97+ArpJSw4B6KSQpKU+/GHnkytQhPgQLLob+ghejP0ifVQXuczg==
+"@tinymce/tinymce-vue@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@tinymce/tinymce-vue/-/tinymce-vue-3.0.1.tgz#c606b5d6b0704a7fc1efdf96ef6080cdc23c88f3"
+  integrity sha512-UnS1YTmzlASA/G23v8zZFgmjR34BSzMkYDSkGOe4ZqWDkz2uwHmiC1sNQj/70DVWG9br8cTPVjUhgOn/b+3ygQ==
 
 "@types/babel__core@^7.1.0":
   version "7.1.9"
@@ -9426,10 +9426,10 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tinymce@^5.4.1:
-  version "5.4.1"
-  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-5.4.1.tgz#4c101e78cbd22c148d6013f7c66eb0cb480723db"
-  integrity sha512-eUjwDVCTSHSnFfpzX5TjTHXsGj5gvPQwzo3RFDF374gfK5voHqcRGojvQnu4NtNW1BAb012/KW1tkXBbUrEveg==
+tinymce@5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-5.1.2.tgz#7eb44d5dccfa17910f668a2d858a4d66b80b526a"
+  integrity sha512-P61Odc3O2IDvC1qBmd7xkh1uRDKtfn8YNvh3sone84H9/W527HNbATbXpin/ewzZHxhw67hKRe9FzOBhQzFQig==
 
 tmp@^0.0.33:
   version "0.0.33"

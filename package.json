@@ -9,7 +9,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@tinymce/tinymce-vue": "^3.2.2",
+    "@tinymce/tinymce-vue": "3.0.1",
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
     "default-passive-events": "^2.0.0",
@@ -18,7 +18,7 @@
     "file-saver": "^2.0.2",
     "md5": "^2.2.1",
     "qs": "^6.9.4",
-    "tinymce": "^5.4.1",
+    "tinymce": "5.1.2",
     "v-charts": "^1.19.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
