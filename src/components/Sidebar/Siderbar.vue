@@ -22,7 +22,6 @@
 <script>
 import navitem from "./NavItem";
 import { mapState } from "vuex";
-import { navListApi } from "@/api/api";
 // import store from "@/store/index";
 export default {
   components: {
@@ -38,7 +37,8 @@ export default {
   },
   computed: { ...mapState(["isCollapse"]) },
   created() {
-    navListApi({})
+    this.$api
+      .navListApi({})
       .then(res => {
         this.sideBarData = res.data.data;
       })

@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import { chartsApi } from "@/api/api";
 export default {
   data() {
     this.chartSettings = {
@@ -23,7 +22,8 @@ export default {
     };
   },
   created() {
-    chartsApi({})
+    this.$api
+      .chartsApi({})
       .then(res => {
         // sort按日期排序
         this.chartData.rows = res.data.data.sort((a, b) => {
