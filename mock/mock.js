@@ -54,6 +54,12 @@ const navListApi = () => {
       child: []
     },
     {
+      path: "/steps/index",
+      iconfontname: "el-icon-s-tools",
+      name: "步骤条",
+      child: []
+    },
+    {
       path: "/setting",
       iconfontname: "el-icon-s-tools",
       name: "设置",
