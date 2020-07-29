@@ -99,6 +99,7 @@ export default {
 .el-container {
   height: 100%;
 }
+
 .el-header {
   display: flex;
   justify-content: space-between;
@@ -108,6 +109,7 @@ export default {
   color: $mainTextColor;
   line-height: 60px;
   box-shadow: 2px 2px 5px rgba($color: $black, $alpha: 0.15);
+  min-width: 992px;
   .icon {
     font-size: $large;
     cursor: pointer;
@@ -119,6 +121,10 @@ export default {
   .el-icon-setting {
     color: $mainTextColor;
   }
+}
+
+.el-main {
+  min-width: 992px;
 }
 
 // 路由过渡动画
