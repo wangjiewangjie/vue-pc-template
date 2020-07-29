@@ -30,7 +30,8 @@ const routes = [
     name: "Error",
     component: () =>
       import(
-        /* webpackChunkName: "error", webpackPrefetch: true */ "../views/Error/Error.vue"
+        /* webpackChunkName: "error", webpackPrefetch: true */
+        "../views/Error/Error.vue"
       ),
     meta: {
       title: "页面不存在",
@@ -132,11 +133,28 @@ const routes = [
     component: () => import("../views/Admin/Admin.vue"),
     children: [
       {
+        path: "/steps/index",
+        name: "Steps",
+        component: () =>
+          import(/* webpackChunkName: "steps" */ "../views/Steps/Steps.vue"),
+        meta: {
+          title: "步骤条",
+          keepAlive: false
+        }
+      }
+    ]
+  },
+  {
+    path: "/admin",
+    component: () => import("../views/Admin/Admin.vue"),
+    children: [
+      {
         path: "/setting/index",
         name: "Setting",
         component: () =>
           import(
-            /* webpackChunkName: "setting" */ "../views/Setting/Setting.vue"
+            /* webpackChunkName: "setting" */
+            "../views/Setting/Setting.vue"
           ),
         meta: {
           title: "设置1",
@@ -148,7 +166,8 @@ const routes = [
         name: "SettingMenu",
         component: () =>
           import(
-            /* webpackChunkName: "setting" */ "../views/Setting/SecondMenu.vue"
+            /* webpackChunkName: "setting" */
+            "../views/Setting/SecondMenu.vue"
           ),
         meta: {
           title: "设置2",

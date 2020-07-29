@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     navActive: "",
     isCollapse: false,
-    iconCollapse: "el-icon-s-fold"
+    iconCollapse: "el-icon-s-fold",
+    active: 1
   },
   mutations: {
     // 水平折叠收起菜单
@@ -18,6 +19,9 @@ export default new Vuex.Store({
       } else {
         state.iconCollapse = "el-icon-s-fold";
       }
+    },
+    handleNext(state) {
+      state.active++;
     }
   },
   actions: {},
