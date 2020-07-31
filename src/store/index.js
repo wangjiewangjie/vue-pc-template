@@ -21,7 +21,8 @@ export default new Vuex.Store({
         state.iconCollapse = "el-icon-s-fold";
       }
     },
-    handleSelect(state, key) {
+    // 切换菜单
+    handleSelectMenu(state, key) {
       state.navActive = key;
     },
     handleNext(state) {
