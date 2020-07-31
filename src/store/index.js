@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex);
 
@@ -20,11 +21,19 @@ export default new Vuex.Store({
         state.iconCollapse = "el-icon-s-fold";
       }
     },
+    handleSelect(state, key) {
+      state.navActive = key;
+    },
     handleNext(state) {
       state.active++;
     }
   },
   actions: {},
   modules: {},
-  strict: false // 不要在发布环境下启用严格模式！严格模式会深度监测状态树来检测不合规的状态变更——请确保在发布环境下关闭严格模式，以避免性能损失。
+  strict: false, // 不要在发布环境下启用严格模式！严格模式会深度监测状态树来检测不合规的状态变更——请确保在发布环境下关闭严格模式，以避免性能损失。
+  plugins: [
+    createPersistedState({
+      storage: window.sessionStorage
+    })
+  ]
 });

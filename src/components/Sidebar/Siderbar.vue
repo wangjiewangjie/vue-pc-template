@@ -21,7 +21,7 @@
 
 <script>
 import navitem from "./NavItem";
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 // import store from "@/store/index";
 export default {
   components: {
@@ -47,9 +47,10 @@ export default {
       });
   },
   methods: {
-    handleSelect(key) {
-      this.$store.state.navActive = key;
-    }
+    ...mapMutations(["handleSelect"])
+    // handleSelect(key) {
+    //   this.$store.state.navActive = key;
+    // }
   }
   // computed: {
   //   isCollapse() {
