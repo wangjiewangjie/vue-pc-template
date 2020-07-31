@@ -17,7 +17,7 @@ export default {
       alert("完成");
     },
     handleLast() {
-      this.$store.state.active--;
+      this.$store.commit("handleLast");
     }
   },
   store

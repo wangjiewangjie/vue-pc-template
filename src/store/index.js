@@ -12,7 +12,7 @@ export default new Vuex.Store({
     active: 1
   },
   mutations: {
-    // 水平折叠收起菜单
+    /* 水平折叠收起菜单 */
     handleCollapse(state) {
       state.isCollapse = !state.isCollapse;
       if (state.isCollapse === true) {
@@ -21,12 +21,17 @@ export default new Vuex.Store({
         state.iconCollapse = "el-icon-s-fold";
       }
     },
-    // 切换菜单
+    /* 切换菜单 */
     handleSelectMenu(state, key) {
       state.navActive = key;
     },
+    /* 下一步 */
     handleNext(state) {
       state.active++;
+    },
+    /* 上一步 */
+    handleLast(state) {
+      state.active--;
     }
   },
   actions: {},

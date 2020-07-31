@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     handleNext() {
-      this.$store.state.active++;
+      this.$store.commit("handleNext");
     }
   },
   store
