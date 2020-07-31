@@ -8,7 +8,7 @@
     :text-color="textColor"
     :active-text-color="activeTextColor"
     :collapse="isCollapse"
-    @select="handleSelect"
+    @select="handleSelectMenu"
   >
     <navitem
       v-for="(item, index) in sideBarData"
@@ -22,6 +22,7 @@
 <script>
 import navitem from "./NavItem";
 import { mapState, mapMutations } from "vuex";
+// import store from "@/store/index";
 export default {
   components: {
     navitem
@@ -47,7 +48,18 @@ export default {
   },
   methods: {
     ...mapMutations(["handleSelectMenu"])
+    // handleSelect(key) {
+    //   this.$store.state.navActive = key;
+    // }
   }
+  // computed: {
+  //   isCollapse() {
+  //     return this.$store.state.isCollapse;
+  //   }
+  // }
+  // computed: mapState({
+  //   isCollapse: state => state.isCollapse
+  // })
 };
 </script>
 
