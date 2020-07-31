@@ -25,53 +25,53 @@ const navListApi = () => {
   let data = [
     {
       path: "/admin",
-      iconfontname: "el-icon-s-home",
+      iconfontname: "home",
       name: "首页",
       child: []
     },
     {
       path: "/charts/index",
-      iconfontname: "el-icon-s-data",
+      iconfontname: "charts",
       name: "图表",
       child: []
     },
     {
       path: "/list/index",
-      iconfontname: "el-icon-s-order",
+      iconfontname: "list",
       name: "列表",
       child: []
     },
     {
       path: "/excel/index",
-      iconfontname: "el-icon-document",
+      iconfontname: "list",
       name: "Excel",
       child: []
     },
     {
       path: "/editor/index",
-      iconfontname: "el-icon-s-tools",
+      iconfontname: "editor",
       name: "富文本",
       child: []
     },
     {
       path: "/steps/index",
-      iconfontname: "el-icon-s-tools",
+      iconfontname: "steps",
       name: "步骤条",
       child: []
     },
     {
       path: "/setting",
-      iconfontname: "el-icon-s-tools",
+      iconfontname: "setting",
       name: "设置",
       child: [
         {
           path: "/setting/index",
-          iconfontname: "el-icon-s-tools",
+          iconfontname: "set",
           name: "设置1"
         },
         {
           path: "/setting/secondmenu",
-          iconfontname: "el-icon-s-tools",
+          iconfontname: "set",
           name: "设置2"
         }
       ]

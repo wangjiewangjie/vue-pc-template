@@ -1,0 +1,107 @@
+{
+  "id": "1978181",
+  "name": "vue-pc-admin",
+  "font_family": "",
+  "css_prefix_text": "",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "14738939",
+      "name": "1_分配H5活动选中",
+      "font_class": "steps-active",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "14738945",
+      "name": "1_管理员设置",
+      "font_class": "setting",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "14738946",
+      "name": "1_分配H5活动",
+      "font_class": "steps",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "14738958",
+      "name": "1_奖品列表选中",
+      "font_class": "list-active",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "14738959",
+      "name": "1_奖品列表",
+      "font_class": "list",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "14738976",
+      "name": "1_数据统计",
+      "font_class": "charts",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "14738977",
+      "name": "1_首页选中",
+      "font_class": "home-active",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
+      "icon_id": "14738978",
+      "name": "1_首页",
+      "font_class": "home",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    },
+    {
+      "icon_id": "14738979",
+      "name": "1_设置",
+      "font_class": "set",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "14738982",
+      "name": "1_设置选中",
+      "font_class": "set-active",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "14738984",
+      "name": "1_数据统计选中",
+      "font_class": "charts-active",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "14738999",
+      "name": "1_页面设置",
+      "font_class": "editor",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "14739000",
+      "name": "1_页面设置选中",
+      "font_class": "editor-active",
+      "unicode": "e680",
+      "unicode_decimal": 59008
+    },
+    {
+      "icon_id": "15029298",
+      "name": "管理员设置选中",
+      "font_class": "setting-active",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    }
+  ]
+}
