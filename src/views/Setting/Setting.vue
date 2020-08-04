@@ -1,12 +1,19 @@
 <template>
-  <div>
-    {{ $route.name }}
-    <router-link to="/admin">home</router-link>
+  <div class="page">
+    {{ timeFormat() }}
   </div>
 </template>
 
 <script>
-export default {};
+import { timeFormat } from "@/utils/common";
+export default {
+  data() {
+    return {};
+  },
+  methods: {
+    timeFormat
+  }
+};
 </script>
 
-<style lang="scss" scoped></style>
+<style></style>

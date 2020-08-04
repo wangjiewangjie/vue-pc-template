@@ -64,4 +64,21 @@ const removeCookie = name => {
   setCookie(name, 1, -1);
 };
 
-export { timeFormat, getWindonHref, setCookie, getCookie, removeCookie };
+/* 格式化参数 */
+const formatType = type => {
+  const formatType = new Map([
+    ["success", "成功"],
+    ["warning", "警告"],
+    ["danger", "危险"]
+  ]);
+  return formatType.get(type);
+};
+
+export {
+  timeFormat,
+  getWindonHref,
+  setCookie,
+  getCookie,
+  removeCookie,
+  formatType
+};
