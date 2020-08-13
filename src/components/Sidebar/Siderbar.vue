@@ -35,7 +35,7 @@ export default {
     };
   },
   computed: { ...mapState(["isCollapse"]) },
-  created() {
+  mounted() {
     this.$api
       .navListApi({})
       .then(res => {

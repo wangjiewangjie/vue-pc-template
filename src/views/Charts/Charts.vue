@@ -21,7 +21,7 @@ export default {
       }
     };
   },
-  created() {
+  mounted() {
     this.$api
       .chartsApi({})
       .then(res => {
