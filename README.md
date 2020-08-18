@@ -1,4 +1,4 @@
-# vue-pc-template
+# vue-admin-template
 
 ## Project setup
 ```
