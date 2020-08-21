@@ -7,7 +7,8 @@ export function chartsApi(data) {
   return request({
     url: `${api}chartsApi`,
     method: "get",
-    data
+    data,
+    hideloading: false //loading 组件
   });
 }
 
@@ -15,6 +16,7 @@ export function navListApi(data) {
   return request({
     url: `${api}navListApi`,
     method: "get",
-    data
+    data,
+    hideloading: false 
   });
 }

@@ -1,5 +1,6 @@
 import axios from "axios";
 // import QS from "qs";
+import { Loading } from 'element-ui';
 
 // 创建axios实例
 const service = axios.create({
@@ -17,10 +18,18 @@ const service = axios.create({
     port: 9000
   }
 });
-
+let loadingInstance
 // 添加请求拦截器
 service.interceptors.request.use(
   config => {
+    if (!config.hideloading) {
+      loadingInstance = Loading.service({
+        lock: true,
+        text: 'Loading',
+        spinner: 'el-icon-loading',
+        background: 'rgba(0, 0, 0, 0.7)'
+      });
+    }
     return config;
   },
   error => {
@@ -32,12 +41,14 @@ service.interceptors.request.use(
 // 添加响应拦截器
 service.interceptors.response.use(
   response => {
+    loadingInstance.close();
     return response;
   },
-  err => {
+  error => {
+    loadingInstance.close();
     // 回调失败
-    if (err && err.response) {
-      switch (err.response.status) {
+    if (error && error.response) {
+      switch (error.response.status) {
         case 401:
           alert("未授权，请重新登录(401)");
           break;
@@ -54,7 +65,7 @@ service.interceptors.response.use(
           alert("请求出错(连接出错)");
       }
     }
-    return Promise.reject(err);
+    return Promise.reject(error);
   }
 );
 
