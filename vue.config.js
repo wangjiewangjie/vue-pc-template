@@ -1,5 +1,7 @@
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
+
 const productionGzipExtensions = ["js", "css"];
+
 const cdn = {
   css: [
     "https://cdn.bootcdn.net/ajax/libs/element-ui/2.4.5/theme-chalk/index.css"
@@ -12,8 +14,7 @@ const cdn = {
 };
 
 const path = require('path')
-
-function resolve(dir) {
+const resolve = (dir) => {
   return path.join(__dirname, dir)
 }
 
@@ -66,7 +67,7 @@ module.exports = {
       })
     ],
     /* 修改webpack config, 使其不打包externals下的资源 public/index.html 添加cdn */
-    externals: {
+    externals: process.env.NODE_ENV === 'development' ? {} : {
       "vue-router": "VueRouter",
       echarts: "echarts",
       "element-ui": "ELEMENT"
