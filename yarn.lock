@@ -3546,11 +3546,6 @@ default-gateway@^5.0.5:
   dependencies:
     execa "^3.3.0"
 
-default-passive-events@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/default-passive-events/-/default-passive-events-2.0.0.tgz#79b1aa67becbaab38b718469b5480fef92eda649"
-  integrity sha512-eMtt76GpDVngZQ3ocgvRcNCklUMwID1PaNbCNxfpDXuiOXttSh0HzBbda1HU9SIUsDc02vb7g9+3I5tlqe/qMQ==
-
 defaults@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/defaults/-/defaults-1.0.3.tgz#c656051e9817d9ff08ed881477f3fe4019f3ef7d"
@@ -9431,10 +9426,10 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tinymce@5.1.2:
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-5.1.2.tgz#7eb44d5dccfa17910f668a2d858a4d66b80b526a"
-  integrity sha512-P61Odc3O2IDvC1qBmd7xkh1uRDKtfn8YNvh3sone84H9/W527HNbATbXpin/ewzZHxhw67hKRe9FzOBhQzFQig==
+tinymce@5.4.1:
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/tinymce/-/tinymce-5.4.1.tgz#4c101e78cbd22c148d6013f7c66eb0cb480723db"
+  integrity sha512-eUjwDVCTSHSnFfpzX5TjTHXsGj5gvPQwzo3RFDF374gfK5voHqcRGojvQnu4NtNW1BAb012/KW1tkXBbUrEveg==
 
 tmp@^0.0.33:
   version "0.0.33"
