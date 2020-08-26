@@ -4,7 +4,6 @@
 * [✅  目录结构](#directoryStructure)
 * [✅  安装](#dev)
 * [✅  发布](#build)
-* [✅  vue.config.js](#config)
 * [✅  ElementUI 组件按需加载](#element)
 * [✅  Sass 全局样式](#scss)
 * [✅  Axios 封装及接口管理](#axios)
@@ -15,6 +14,7 @@
 * [✅  简易骨架屏](#skeleton)
 * [✅  工具函数](#utils)
 * [✅  Nginx 代理](#nginx)
+
 ### <div id="function">✅ 功能</div>
 
 ``` 
@@ -142,9 +142,78 @@ module.exports = {
 
 ### <div id="axios">✅  Axios 封装及接口管理</div>
 
+`utils/requset.js` axios的封装
+
+``` javascript
+const service = axios.create({
+    // `baseURL` 将自动加在 `url` 前面，除非 `url` 是一个绝对 URL。
+    // 它可以通过设置一个 `baseURL` 便于为 axios 实例的方法传递相对 URL
+    baseURL: process.env.NODE_ENV === "production" ? "" : "",
+    // `timeout` 指定请求超时的毫秒数(0 表示无超时时间)
+    // 如果请求话费了超过 `timeout` 的时间，请求将被中断
+    timeout: 5000
+});
+
+service.interceptors.request.use(
+    config => {
+        /**
+         * @param {Object} config.data [请求主体被发送的数据 拦截混入公共参数]
+         * @param {Boolean} config.hideloading [请求时是否显示Loading]
+         */
+        if (!config.hideloading) {
+            loadingInstance = Loading.service({
+                lock: true,
+                text: 'Loading',
+                spinner: 'el-icon-loading',
+                background: 'rgba(0, 0, 0, 0.7)'
+            });
+        }
+        return config;
+    },
+    error => {
+        // 请求失败
+        return Promise.reject(error);
+    }
+);
+```
+
+`api/api.js` 统一管理接口
+
+``` javascript
+/**
+ * @param {String} url [请求的服务器 URL]
+ * @param {String} ${api} [开发环境下代理服务器的主机名称和端口]
+ * @param {String} method [请求时使用的方法]
+ * @param {Object} data [请求主体被发送的数据]
+ * @param {Boolean} hideloading [请求时是否显示Loading true隐藏 false显示]
+ */
+export function Api(data) {
+    return request({
+        url: `${api}Api` ,
+        method: "get",
+        data,
+        hideloading: false
+    });
+}
+```
+
 [▲ 回顶部](#top)
 
 ### <div id="nginx">✅  Nginx 代理</div>
 
-[▲ 回顶部](#top)
+路由history模式下配置Nginx
 
+``` javascript
+const router = new VueRouter({
+    mode: "history", //配置history需要nginx配置
+    routes
+});
+```
+
+``` javascript
+location / {
+    try_files $uri $uri / /index.html; #路由history配置
+}
+```
+
+[▲ 回顶部](#top)
