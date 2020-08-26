@@ -199,6 +199,38 @@ export function Api(data) {
 
 [▲ 回顶部](#top)
 
+### <div id="router">✅  Vue-router</div>
+
+``` javascript
+const routes = [{
+    path: "*",
+    name: "Error",
+    component: () =>
+        import(
+            /* webpackChunkName: "error", webpackPrefetch: true */
+            "../views/Error/Error.vue"
+        ), // 路由懒加载 webpackChunkName分包名称 webpackPrefetch 手动选择要提前获取的代码区块
+    meta: {
+        title: "页面不存在", // 页面title
+        keepAlive: false // keep-alive 标识
+    }
+}]
+
+const router = new VueRouter({
+    mode: "history", //配置history需要nginx配置 hash模式 需要配置 vue.config.js publicPath
+    routes
+});
+
+/* 路由发生变化修改页面title */
+router.afterEach(to => {
+    if (to.meta.title) {
+        document.title = to.meta.title;
+    }
+});
+```
+
+[▲ 回顶部](#top)
+
 ### <div id="nginx">✅  Nginx 代理</div>
 
 路由history模式下配置Nginx
