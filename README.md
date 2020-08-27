@@ -8,12 +8,8 @@
 * [✅  Sass 全局样式](#scss)
 * [✅  Axios 封装及接口管理](#axios)
 * [✅  Vue-router](#router)
-* [✅  富文本](#editor)
-* [✅  Excel](#excel)
-* [✅  ECharts 图表](#ECharts)
-* [✅  简易骨架屏](#skeleton)
-* [✅  工具函数](#utils)
 * [✅  Nginx 代理](#nginx)
+* [✅  第三方库](#npm)
 
 ### <div id="function">✅ 功能</div>
 
@@ -246,6 +242,16 @@ const router = new VueRouter({
 location / {
     try_files $uri $uri / /index.html; #路由history配置
 }
+```
+
+[▲ 回顶部](#top)
+
+### <div id="npm">✅  第三方库</div>
+
+``` 
+md5                 # md5加密
+vue-clipboards      # 复制粘贴
+decimal.js          # js浮点数计算bug              
 ```
 
 [▲ 回顶部](#top)
